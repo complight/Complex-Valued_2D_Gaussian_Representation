@@ -50,12 +50,16 @@ conda activate gholo
 
 ### 2. Install Dependencies
 
-```bash
-# PyTorch (match your CUDA toolkit; CUDA 12.x tested)
-pip install torch torchvision
+Install the pinned versions from `requirements.txt`:
 
-# Core dependencies
-pip install odak lpips imageio scikit-image matplotlib numpy pillow tqdm
+```bash
+pip install -r requirements.txt
+```
+
+For a specific CUDA build of PyTorch (the pinned wheels were tested with CUDA 12.8), install it first with the matching index:
+
+```bash
+pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cu128
 ```
 
 Verify the installation:
