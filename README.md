@@ -10,11 +10,11 @@
 
 **European Conference on Computer Vision (ECCV) 2026**
 
-[Yicheng Zhan](https://albertgary.github.io/)<sup>1,*</sup> · [Xiangjun Gao](https://gaoxiangjun.github.io/)<sup>2,*</sup> · [Long Quan](https://home.cse.ust.hk/~quan/)<sup>2</sup> · [Kaan Akşit](https://www.kaanaksit.com/)<sup>1</sup>
+[Yicheng Zhan](https://albertgary.github.io/)<sup>1,&ast;</sup> · [Xiangjun Gao](https://gaoxiangjun.github.io/)<sup>2,&ast;</sup> · [Long Quan](https://home.cse.ust.hk/~quan/)<sup>2</sup> · [Kaan Akşit](https://www.kaanaksit.com/)<sup>1</sup>
 
 <sup>1</sup> University College London (UCL) &emsp; <sup>2</sup> Hong Kong University of Science and Technology (HKUST)
 
-<sup>*</sup> Equal Contribution
+<sup>&ast;</sup> Equal Contribution
 
 </div>
 
