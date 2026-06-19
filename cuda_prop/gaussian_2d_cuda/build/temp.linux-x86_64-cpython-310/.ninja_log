@@ -1,0 +1,9 @@
+# ninja log v7
+0	33196	1777857093997868605	/data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/gaussian_2d_cuda/build/temp.linux-x86_64-cpython-310/binding.o	2a5ed6e329cdc207
+1	81190	1777857093998868619	/data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/gaussian_2d_cuda/build/temp.linux-x86_64-cpython-310/wave_rasterizer/backward.o	d1aa6ba9bab5c967
+2	86280	1777857093999868633	/data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/gaussian_2d_cuda/build/temp.linux-x86_64-cpython-310/wave_rasterizer/forward.o	5c24177c6ef3a001
+2	97216	1777857094001060411	/data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/gaussian_2d_cuda/build/temp.linux-x86_64-cpython-310/wave_rasterizer/raster.o	a381736f0d32a921
+4	41761	1781888433788164994	/data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/gaussian_2d_cuda/build/temp.linux-x86_64-cpython-310/binding.o	2a5ed6e329cdc207
+5	97682	1781888433789524163	/data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/gaussian_2d_cuda/build/temp.linux-x86_64-cpython-310/wave_rasterizer/backward.o	d1aa6ba9bab5c967
+6	101056	1781888433790041839	/data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/gaussian_2d_cuda/build/temp.linux-x86_64-cpython-310/wave_rasterizer/forward.o	5c24177c6ef3a001
+6	115871	1781888433790494649	/data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/gaussian_2d_cuda/build/temp.linux-x86_64-cpython-310/wave_rasterizer/raster.o	a381736f0d32a921

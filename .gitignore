@@ -1,0 +1,7 @@
+*.ipynb
+__pycache__/
+*.png
+!images/*.png
+.ipynb_checkpoints/
+*.log
+result*/

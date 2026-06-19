@@ -1,0 +1,48 @@
+ninja_required_version = 1.3
+cxx = /data/users/albertgary04/envs/yicheng/bin/x86_64-conda-linux-gnu-c++
+nvcc = /data/users/albertgary04/envs/yicheng/bin/nvcc
+
+cflags = -DTORCH_EXTENSION_NAME=cuda_modules -DTORCH_API_INCLUDE_EXTENSION_H -isystem /data/users/albertgary04/envs/yicheng/lib/python3.10/site-packages/torch/include -isystem /data/users/albertgary04/envs/yicheng/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -isystem /data/users/albertgary04/envs/yicheng/include -isystem /data/users/albertgary04/envs/yicheng/include/python3.10 -fPIC -std=c++17 -O3
+post_cflags = 
+cuda_cflags = -ccbin /data/users/albertgary04/envs/yicheng/bin/x86_64-conda-linux-gnu-cc -DTORCH_EXTENSION_NAME=cuda_modules -DTORCH_API_INCLUDE_EXTENSION_H -isystem /data/users/albertgary04/envs/yicheng/lib/python3.10/site-packages/torch/include -isystem /data/users/albertgary04/envs/yicheng/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -isystem /data/users/albertgary04/envs/yicheng/include -isystem /data/users/albertgary04/envs/yicheng/include/python3.10 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options '-fPIC' -O3 --generate-code=arch=compute_80,code=sm_80 --generate-code=arch=compute_86,code=sm_86 -std=c++17
+cuda_post_cflags = 
+cuda_dlink_post_cflags = 
+sycl_dlink_post_cflags = 
+ldflags = -shared -L/data/users/albertgary04/envs/yicheng/lib/python3.10/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/data/users/albertgary04/envs/yicheng/lib -lcudart
+
+rule compile
+  command = $cxx -MMD -MF $out.d $cflags -c $in -o $out $post_cflags
+  depfile = $out.d
+  deps = gcc
+
+rule cuda_compile
+  depfile = $out.d
+  deps = gcc
+  command = $nvcc --generate-dependencies-with-compile --dependency-output $out.d $cuda_cflags -c $in -o $out $cuda_post_cflags
+
+
+
+
+
+rule link
+  command = $cxx $in $ldflags -o $out
+
+build bandlimited_propagation.o: compile /data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/cpp/bandlimited_propagation.cpp
+build batch_matrix_mult.o: compile /data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/cpp/batch_matrix_mult.cpp
+build sum_last_dim.o: compile /data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/cpp/sum_last_dim.cpp
+build element_wise_mult.o: compile /data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/cpp/element_wise_mult.cpp
+build bandlimited_propagation_me.o: compile /data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/cpp/bandlimited_propagation_me.cpp
+build module_def.o: compile /data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/cpp/module_def.cpp
+build bandlimited_propagation_cuda.cuda.o: cuda_compile /data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/cuda/bandlimited_propagation_cuda.cu
+build batch_matrix_mult_cuda.cuda.o: cuda_compile /data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/cuda/batch_matrix_mult_cuda.cu
+build sum_last_dim_cuda.cuda.o: cuda_compile /data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/cuda/sum_last_dim_cuda.cu
+build element_wise_mult_cuda.cuda.o: cuda_compile /data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/cuda/element_wise_mult_cuda.cu
+build bandlimited_propagation_cuda_me.cuda.o: cuda_compile /data/users/albertgary04/Albert_Workspace/GaussianImage_Holo/cuda_prop/cuda/bandlimited_propagation_cuda_me.cu
+
+
+
+
+
+build cuda_modules.so: link bandlimited_propagation.o batch_matrix_mult.o sum_last_dim.o element_wise_mult.o bandlimited_propagation_me.o module_def.o bandlimited_propagation_cuda.cuda.o batch_matrix_mult_cuda.cuda.o sum_last_dim_cuda.cuda.o element_wise_mult_cuda.cuda.o bandlimited_propagation_cuda_me.cuda.o
+
+default cuda_modules.so
