@@ -204,11 +204,11 @@ The authors thank Maoye for the early suggestions on this paper.
 ## Citation
 
 ```bibtex
-@inproceedings{zhan2026complexgaussian,
-  title     = {Complex-Valued 2D Gaussian Representation for Computer-Generated Holography},
-  author    = {Zhan, Yicheng and Gao, Xiangjun and Quan, Long and Ak{\c{s}}it, Kaan},
-  booktitle = {European Conference on Computer Vision (ECCV)},
-  year      = {2026}
+@article{zhan2025complex,
+  title={Complex-Valued 2D Gaussian Representation for Computer-Generated Holography},
+  author={Zhan, Yicheng and Gao, Xiangjun and Quan, Long and Ak{\c{s}}it, Kaan},
+  journal={arXiv preprint arXiv:2511.15022},
+  year={2025}
 }
 ```
 <!-- TODO: update with the final citation once published -->
