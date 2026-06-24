@@ -1,1 +1,0 @@
-gaussian_2d_cuda
