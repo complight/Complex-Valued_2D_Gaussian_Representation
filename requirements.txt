@@ -1,0 +1,17 @@
+# PyTorch (match your CUDA toolkit; CUDA 12.x tested — wheels built for cu128)
+# For a specific CUDA build, install via:
+#   pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cu128
+torch==2.9.1
+torchvision==0.24.1
+
+# Core dependencies
+odak==0.2.7
+lpips==0.1.4
+imageio==2.37.3
+scikit-image==0.25.2
+matplotlib==3.10.8
+numpy==1.24.4
+pillow==11.3.0
+tqdm==4.67.3
+pytorch-msssim==1.0.0
+plyfile==1.1.3
